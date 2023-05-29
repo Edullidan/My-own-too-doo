@@ -59,14 +59,27 @@ export const TodoWrapper = () => {
     setTodos(edTask);
   };
 
+  const hH = {
+    background: "#0a3c97",
+    marginTop: "5rem",
+    padding: "2rem",
+    borderRadius: "5px",
+  };
+
+  const completed = {
+    color: "#b63e1a",
+    textDecoration: "line-through",
+  };
+
   return (
     <div className='TodoWrapper'>
-      <h1>Get Things Done !</h1>
+      <h1 style={hH}>Get Things Done !</h1>
+
       <TodoForm addTodo={addTodo} />
       {}
       {todos.map((todo) =>
         todo.isEditing ? (
-          <EditTodoForm editTodo={editTask} task={todo} />
+          <EditTodoForm style={completed} editTodo={editTask} task={todo} />
         ) : (
           <Todo
             key={todo.id}

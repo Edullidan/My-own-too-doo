@@ -8,6 +8,18 @@ export const EditTodoForm = ({ editTodo, task }) => {
 
     editTodo(value, task.id);
   };
+
+  const buttonStyles = {
+    outline: "none",
+    background: "#4b033b",
+    border: "1px solid #b63e1a",
+    padding: " 0.5rem",
+    marginTop: "0.5rem",
+    marginBottom: "1rem",
+    width: "100px",
+    color: "#black",
+  };
+
   return (
     <form onSubmit={handleSubmit} className='TodoForm'>
       <input
@@ -17,7 +29,7 @@ export const EditTodoForm = ({ editTodo, task }) => {
         className='todo-input'
         placeholder='Update task'
       />
-      <button type='submit' className='todo-btn'>
+      <button style={buttonStyles} type='submit' className='todo-btn'>
         Add Task
       </button>
     </form>
